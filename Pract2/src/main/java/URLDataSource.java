@@ -6,9 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Реалізація DataSource для читання даних з URL-адреси.
- */
+
 public class URLDataSource implements DataSource {
     private final URL url;
 

@@ -20,7 +20,6 @@ public class TransactionAnalyzerTest {
 
     @Test
     public void testCountTransactionsByMonth() {
-        // 1. Підготовка (Arrange)
         Transaction t1 = new Transaction("01-02-2023", 50.0, "Дохід"); // Лютий
         Transaction t2 = new Transaction("15-02-2023", -20.0, "Витрата"); // Лютий
         Transaction t3 = new Transaction("05-03-2023", 100.0, "Дохід");  // Березень
@@ -39,7 +38,6 @@ public class TransactionAnalyzerTest {
 
     @Test
     public void testFindTopExpenses() {
-        // Arrange: Створюємо 3 витрати. -100 (найбільша), -50 (середня), -10 (найменша)
         Transaction t1 = new Transaction("01-01-2023", -50.0, "Середня");
         Transaction t2 = new Transaction("01-01-2023", -100.0, "Велика");
         Transaction t3 = new Transaction("01-01-2023", -10.0, "Мала");
@@ -47,12 +45,10 @@ public class TransactionAnalyzerTest {
 
         TransactionAnalyzer analyzer = new TransactionAnalyzer(transactions);
 
-        // Act
         List<Transaction> result = analyzer.findTopExpenses();
 
-        // Assert
-        Assertions.assertEquals(3, result.size()); // Має повернути всі 3, бо їх менше ніж 10
-        Assertions.assertEquals(-100.0, result.get(0).getAmount()); // Першою має йти найбільша витрата (-100)
-        Assertions.assertEquals(-50.0, result.get(1).getAmount());  // Другою - середня
+        Assertions.assertEquals(3, result.size());
+        Assertions.assertEquals(-100.0, result.get(0).getAmount());
+        Assertions.assertEquals(-50.0, result.get(1).getAmount());
     }
 }

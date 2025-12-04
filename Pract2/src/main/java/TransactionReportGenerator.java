@@ -3,12 +3,10 @@ import java.util.Map;
 
 public class TransactionReportGenerator {
 
-    // Метод для виведення загального балансу
     public void printBalanceReport(double totalBalance) {
         System.out.println("Загальний баланс: " + totalBalance);
     }
 
-    // Метод для виведення кількості транзакцій за місяць
     public void printTransactionsCountByMonth(String monthYear, int count) {
         System.out.println("Кількість транзакцій за " + monthYear + ": " + count);
     }
@@ -26,21 +24,17 @@ public class TransactionReportGenerator {
 
         for (Map.Entry<String, Double> entry : expensesByCategory.entrySet()) {
             String category = entry.getKey();
-            double amount = entry.getValue(); // Тут буде від'ємне число, напр. -4500
+            double amount = entry.getValue();
 
-            // 1. Перетворюємо на додатне число для розрахунків
             double absAmount = Math.abs(amount);
 
-            // 2. Рахуємо кількість зірочок (сума / 1000)
             int starsCount = (int) (absAmount / 1000);
 
-            // 3. Формуємо рядок із зірочок
-            // (У Java 11+ можна використовувати "string".repeat(n))
             String stars = "*".repeat(starsCount);
 
 
             if (starsCount == 0 && absAmount > 0) {
-                stars = "."; // (опціонально) щоб показати, що витрати були, але малі
+                stars = ".";
             }
 
             System.out.printf("%-20s | %s (%.0f грн)%n", category, stars, amount);

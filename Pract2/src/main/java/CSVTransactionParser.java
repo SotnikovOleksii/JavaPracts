@@ -1,9 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Реалізація TransactionParser для обробки даних у форматі CSV.
- */
 public class CSVTransactionParser implements TransactionParser {
     private static final String DELIMITER = ",";
 
