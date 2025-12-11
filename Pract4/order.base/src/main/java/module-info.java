@@ -1,7 +1,7 @@
 module order.base {
     requires static lombok;
     requires javafaker;
-    requires java.sql; // <--- ДОДАЙ ЦЕЙ РЯДОК
+    requires java.sql;
 
     exports products;
     exports order;

@@ -6,6 +6,6 @@ public class AsyncExecutor {
 
         System.out.println("Running a new thread: " + thread.getId());
 
-        new Thread(task).start();
+        thread.start();
     }
 }
