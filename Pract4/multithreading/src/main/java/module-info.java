@@ -1,2 +1,3 @@
 module multithreading {
+    exports multithreading;
 }

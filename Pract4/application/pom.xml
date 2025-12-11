@@ -9,12 +9,27 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>order.storage</artifactId>
+    <artifactId>application</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>duikt</groupId>
             <artifactId>order.base</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>duikt</groupId>
+            <artifactId>order.processing</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>duikt</groupId>
+            <artifactId>order.storage</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>duikt</groupId>
+            <artifactId>multithreading</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
