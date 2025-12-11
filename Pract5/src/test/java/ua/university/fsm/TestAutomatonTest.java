@@ -10,29 +10,19 @@ class TestAutomatonTest {
 
     @ParameterizedTest(name = "Вхід: ''{0}'' -> Очікується: {1}")
     @CsvSource({
-            // === Базові сценарії ===
             "abcTESTabc, F",
             "abcTES, THREE",
             "TEST, F",
             "NO, S",
-
-            // === Перевірка станів ===
             "T, ONE",
             "TE, TWO",
             "TES, THREE",
-
-            // === Сценарії "із зірочкою" (складні випадки) ===
-            "TETEST, F",          // Фікс працює!
+            "TETEST, F",
             "TTTEST, F",
             "blaTETESTbla, F",
-
-            // === Виправлені очікування ===
-            // Рядок закінчується на "T", тому стан має бути ONE, а не S
             "TESEST, ONE",
             "tEST, ONE",
             "T E S T, ONE",
-
-            // === Інші випадки ===
             "TESTING, F"
     })
     void testAutomatonLogic(String input, State expectedState) {
